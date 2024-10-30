@@ -5,16 +5,16 @@
         static void Main(string[] args)
         {
             #region byte&sbyte
-            byte positiveValue = 200;  // Valid
-            // byte negativeValue = -1; // Invalid, causes error
+            byte positiveValue = 200;  // Valid 0-255
+            //byte negativeValue = -1; // Invalid, causes error
 
             Console.WriteLine("Using byte:");
             Console.WriteLine($"Positive Value: {positiveValue}");
 
             // Trying to exceed the maximum range
-            // byte overflowValue = 300; // Invalid, causes compile-time error
+            //byte overflowValue = 300; // Invalid, causes compile-time error
 
-            sbyte positiveValue1 = 100;  // Valid
+            sbyte positiveValue1 = 100;  // Valid -> -128 to  127
             sbyte negativeValue1 = -50;  // Valid
 
             Console.WriteLine("Using sbyte:");
@@ -22,7 +22,7 @@
             Console.WriteLine($"Negative Value: {negativeValue1}");
 
             // Trying to exceed the maximum range
-            // sbyte overflowValue1 = 130; // Invalid, causes compile-time error
+             //sbyte overflowValue1 = 130; // Invalid, causes compile-time error
             #endregion
             
             #region short &ushort 
@@ -32,7 +32,7 @@
             Console.WriteLine($"Temperature: {temperature}");
 
             // Trying to exceed the range
-            // short overflowValue = 40000; // Invalid, causes compile-time error
+          //short overflowValue = 40000; // Invalid, causes compile-time error
 
             // Declaring a ushort variable
             ushort distance = 50000;  // Valid, within range
@@ -40,7 +40,7 @@
             Console.WriteLine($"Distance: {distance}");
 
             // Trying to assign a negative value
-            // ushort negativeValue = -1; // Invalid, causes compile-time error
+           //ushort negativeValue = -1; // Invalid, causes compile-time error
             #endregion
 
             #region int&uint
@@ -89,17 +89,23 @@
             // Storing an integer in an object
             object intObject = 123;
             Console.WriteLine($"Object holding int: {intObject}");
-
+            Console.WriteLine($"Object holding int: {intObject.GetType()}");
+            var intObject1= 224;;
+             
+            Console.WriteLine($"var is : {intObject1}");
+            Console.WriteLine($"var is type of : {intObject1.GetType()}");
             // Storing a string in an object
             object stringObject = "Hello, world!";
             Console.WriteLine($"Object holding string: {stringObject}");
+            Console.WriteLine($"Object holding string: {stringObject.GetType()}");
 
             // Storing a double in an object
             object doubleObject = 45.67;
             Console.WriteLine($"Object holding double: {doubleObject}");
+            Console.WriteLine($"Object holding double: {doubleObject.GetType()}");
             // Casting object back to int
             int intValue = (int)intObject;  // Explicit casting is required
-            Console.WriteLine($"Casted int: {intValue}");
+            Console.WriteLine($"Casted int from intValue is : {intValue}");
 
             // Casting object back to string
             string stringValue = (string)stringObject;  // Explicit casting
